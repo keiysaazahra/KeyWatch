@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyWatch - Offers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* style tag: penyesuaian khusus halaman ini */
+        body {
+            background-color: #0b132b;
+        }
+
+        .offers-wrap {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .offers-header h1 {
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="offers-wrap">
+
+        <div class="offers-header">
+            <div>
+                <h1>Special Offers &amp; Combos</h1>
+                <p>Hemat lebih banyak dengan paket tiket bioskop, popcorn, dan minuman favoritmu.</p>
+            </div>
+            <div class="offer-filter-bar">
+                <button class="offer-filter active" onclick="filterOffers('all', this)">Semua Promo</button>
+                <button class="offer-filter" onclick="filterOffers('combo', this)">Tiket + F&amp;B</button>
+                <button class="offer-filter" onclick="filterOffers('ticket', this)">Tiket</button>
+                <button class="offer-filter" onclick="filterOffers('fnb', this)">F&amp;B</button>
+            </div>
+        </div>
+
+        <div class="offers-grid" id="offersGrid">
+
+            <div class="offer-card" data-category="combo">
+                <div class="offer-banner bg-combo">
+                    <span class="badge">Best Seller &bull; Tiket + F&amp;B</span>
+                    <h2>Couple Date Combo</h2>
+                    <span>Berlaku Senin sampai Minggu (semua jam tayang)</span>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-title">Paket Nonton Berdua + Snack Lengkap</div>
+                    <p class="offer-desc">Nikmati nonton berdua lebih hemat. Sudah termasuk tiket studio reguler dan paket camilan.</p>
+                    <div class="include-list">
+                        <strong>Sudah termasuk:</strong>
+                        <ul>
+                            <li>2 Tiket Reguler 2D (bebas pilih film)</li>
+                            <li>1 Large Caramel / Salted Popcorn</li>
+                            <li>2 Medium Soft Drink / Lemon Tea</li>
+                        </ul>
+                    </div>
+                    <div class="promo-code-box">
+                        <span>Kode: <span class="promo-code" id="code1">DATECOMBO26</span></span>
+                        <button class="copy-btn" onclick="copyCode('code1', this)">Salin</button>
+                    </div>
+                    <div class="offer-footer">
+                        <div class="price-tag">
+                            <small>Rp 165.000</small>
+                            Rp 125.000
+                        </div>
+                        <button class="book-btn" onclick="openBooking('Couple Date Combo (2 Tiket + Popcorn + 2 Minum)', 125000)">Pesan Paket</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offer-card" data-category="ticket">
+                <div class="offer-banner bg-ticket">
+                    <span class="badge">Promo Tiket</span>
+                    <h2>Buy 1 Get 1 Ticket</h2>
+                    <span>Khusus pembelian hari Rabu dan Kamis</span>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-title">Gratis 1 Tiket Setiap Pembelian 1 Tiket</div>
+                    <p class="offer-desc">Ajak teman atau keluarga nonton film terbaru tanpa bayar dua kali. Berlaku untuk film Now Playing.</p>
+                    <div class="include-list">
+                        <strong>Sudah termasuk:</strong>
+                        <ul>
+                            <li>2 Tiket nonton (bayar 1 saja)</li>
+                            <li>Bebas pilih kursi reguler</li>
+                            <li>Bonus 1 voucher diskon F&amp;B 20%</li>
+                        </ul>
+                    </div>
+                    <div class="promo-code-box">
+                        <span>Kode: <span class="promo-code" id="code2">BOGOHEMAT</span></span>
+                        <button class="copy-btn" onclick="copyCode('code2', this)">Salin</button>
+                    </div>
+                    <div class="offer-footer">
+                        <div class="price-tag">
+                            <small>Rp 100.000</small>
+                            Rp 50.000
+                        </div>
+                        <button class="book-btn" onclick="openBooking('Buy 1 Get 1 Ticket (2 Tiket)', 50000)">Klaim &amp; Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offer-card" data-category="fnb">
+                <div class="offer-banner bg-fnb">
+                    <span class="badge">Food &amp; Beverage</span>
+                    <h2>Hungry Movie Box</h2>
+                    <span>Bisa ditambah saat beli tiket</span>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-title">Paket Makanan Berat &amp; Minuman Segar</div>
+                    <p class="offer-desc">Lapar saat film berlangsung? Pesan paket makanan hangat lengkap dengan minuman dingin sebelum masuk studio.</p>
+                    <div class="include-list">
+                        <strong>Sudah termasuk:</strong>
+                        <ul>
+                            <li>1 Chicken Pop / Nachos Cheese</li>
+                            <li>1 French Fries ukuran medium</li>
+                            <li>1 Iced Milo / Thai Tea / Mineral Water</li>
+                        </ul>
+                    </div>
+                    <div class="promo-code-box">
+                        <span>Kode: <span class="promo-code" id="code3">SNACKTIME</span></span>
+                        <button class="copy-btn" onclick="copyCode('code3', this)">Salin</button>
+                    </div>
+                    <div class="offer-footer">
+                        <div class="price-tag">
+                            <small>Rp 78.000</small>
+                            Rp 55.000
+                        </div>
+                        <button class="book-btn" onclick="openBooking('Hungry Movie Box (F&amp;B saja)', 55000)">Pesan F&amp;B</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offer-card" data-category="combo">
+                <div class="offer-banner bg-combo">
+                    <span class="badge">Solo Deal &bull; Tiket + F&amp;B</span>
+                    <h2>Solo Me-Time Pack</h2>
+                    <span>Berlaku setiap hari</span>
+                </div>
+                <div class="offer-body">
+                    <div class="offer-title">1 Tiket Bioskop + Popcorn + Minuman</div>
+                    <p class="offer-desc">Paket praktis untuk kamu yang ingin menikmati waktu menonton sendirian dengan camilan lengkap.</p>
+                    <div class="include-list">
+                        <strong>Sudah termasuk:</strong>
+                        <ul>
+                            <li>1 Tiket Reguler 2D</li>
+                            <li>1 Small Popcorn (Sweet / Salty)</li>
+                            <li>1 Medium Coca-Cola / Iced Tea</li>
+                        </ul>
+                    </div>
+                    <div class="promo-code-box">
+                        <span>Kode: <span class="promo-code" id="code4">SOLOASIK</span></span>
+                        <button class="copy-btn" onclick="copyCode('code4', this)">Salin</button>
+                    </div>
+                    <div class="offer-footer">
+                        <div class="price-tag">
+                            <small>Rp 85.000</small>
+                            Rp 65.000
+                        </div>
+                        <button class="book-btn" onclick="openBooking('Solo Me-Time Pack (1 Tiket + Popcorn + Minum)', 65000)">Pesan Paket</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>Cara Klaim Promo</h3>
+                <ol>
+                    <li>Pilih paket yang kamu mau, lalu salin kodenya.</li>
+                    <li>Klik tombol pesan pada kartu promo.</li>
+                    <li>Isi form pemesanan sampai selesai.</li>
+                    <li>Tunjukkan bukti pemesanan di kasir atau loket.</li>
+                </ol>
+            </div>
+            <div class="info-box">
+                <h3>Syarat dan Ketentuan</h3>
+                <ol>
+                    <li>Promo tidak bisa digabung dengan promo lain.</li>
+                    <li>Satu kode hanya berlaku untuk satu transaksi.</li>
+                    <li>Tiket yang sudah dibayar tidak dapat dikembalikan.</li>
+                    <li>KeyWatch berhak mengubah promo tanpa pemberitahuan.</li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Form pemesanan -->
+    <div class="modal" id="bookingModal" onclick="backdropClose(event)">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+
+            <div id="orderFormWrap">
+                <h3>Pesan Promo &amp; Tiket</h3>
+                <p id="selectedPackageName" class="package-subtitle"></p>
+
+                <form id="orderForm" onsubmit="submitOrder(event)">
+
+                    <div class="form-group">
+                        <label for="nameInput">Nama lengkap</label>
+                        <input type="text" id="nameInput" name="nama" placeholder="Masukkan nama kamu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passInput">Password akun member</label>
+                        <input type="password" id="passInput" name="password" placeholder="Minimal 6 karakter" minlength="6" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="movieSelect">Pilih film (Now Playing)</label>
+                        <select id="movieSelect" name="film" required>
+                            <option value="The Hunger Games: Sunrise on the Reaping">The Hunger Games: Sunrise on the Reaping</option>
+                            <option value="Godzilla Minus Zero">Godzilla Minus Zero</option>
+                            <option value="KF 2026: All the Lovers in the Night">KF 2026: All the Lovers in the Night</option>
+                            <option value="The Cat in the Hat">The Cat in the Hat</option>
+                            <option value="Hajatan Setan">Hajatan Setan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cinemaSelect">Lokasi bioskop dan jam tayang</label>
+                        <select id="cinemaSelect" name="bioskop" required>
+                            <option value="Grand Indonesia, 16.30 WIB">Grand Indonesia, 16.30 WIB</option>
+                            <option value="Grand Indonesia, 20.00 WIB">Grand Indonesia, 20.00 WIB</option>
+                            <option value="Summarecon Mall, 17.00 WIB">Summarecon Mall, 17.00 WIB</option>
+                            <option value="Pondok Indah, 19.45 WIB">Pondok Indah, 19.45 WIB</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="seatInput">Nomor kursi (contoh: D5, D6)</label>
+                        <input type="text" id="seatInput" name="kursi" placeholder="Masukkan nomor kursi" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Metode pembayaran</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="bayar" value="QRIS" checked> QRIS</label>
+                            <label><input type="radio" name="bayar" value="Transfer Bank"> Transfer Bank</label>
+                            <label><input type="radio" name="bayar" value="E-Wallet"> E-Wallet</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tambahan makanan dan minuman (opsional)</label>
+                        <div class="addon-box">
+                            <label>
+                                <span><input type="checkbox" class="addon-check" value="25000" onchange="updateTotal()"> Extra Popcorn Caramel</span>
+                                <span>+Rp 25.000</span>
+                            </label>
+                            <label>
+                                <span><input type="checkbox" class="addon-check" value="18000" onchange="updateTotal()"> Extra Iced Lemon Tea</span>
+                                <span>+Rp 18.000</span>
+                            </label>
+                            <label>
+                                <span><input type="checkbox" class="addon-check" value="30000" onchange="updateTotal()"> Hotdog / Nachos Cheese</span>
+                                <span>+Rp 30.000</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="noteInput">Catatan untuk kasir (opsional)</label>
+                        <textarea id="noteInput" name="catatan" rows="3" placeholder="Misalnya: popcorn tanpa garam"></textarea>
+                    </div>
+
+                    <div class="summary-box">
+                        <span>Total pembayaran:</span>
+                        <span id="totalPriceText">Rp 0</span>
+                    </div>
+
+                    <button type="submit" class="submit-order">Konfirmasi &amp; Bayar Sekarang</button>
+                </form>
+            </div>
+
+            <div class="order-done" id="orderDone">
+                <h3>Pesanan diterima</h3>
+                <p id="doneDetail"></p>
+                <button type="button" class="submit-order" onclick="closeModal()">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var basePrice = 0;
+
+        function formatRupiah(n) {
+            return 'Rp ' + n.toLocaleString('id-ID');
+        }
+
+        // Filter kartu promo berdasarkan kategori
+        function filterOffers(category, btn) {
+            document.querySelectorAll('.offer-filter').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+
+            document.querySelectorAll('.offer-card').forEach(function (card) {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Salin kode promo
+        function copyCode(id, btn) {
+            var text = document.getElementById(id).textContent;
+
+            function done() {
+                btn.textContent = 'Tersalin';
+                setTimeout(function () { btn.textContent = 'Salin'; }, 1500);
+            }
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+            } else {
+                fallbackCopy(text);
+                done();
+            }
+        }
+
+        function fallbackCopy(text) {
+            var area = document.createElement('textarea');
+            area.value = text;
+            area.style.position = 'fixed';
+            area.style.opacity = '0';
+            document.body.appendChild(area);
+            area.select();
+            try { document.execCommand('copy'); } catch (e) { }
+            document.body.removeChild(area);
+        }
+
+        // Buka form pemesanan
+        function openBooking(name, price) {
+            basePrice = price;
+            document.getElementById('orderForm').reset();
+            document.getElementById('selectedPackageName').textContent = name + ' - ' + formatRupiah(price);
+            document.getElementById('orderFormWrap').style.display = 'block';
+            document.getElementById('orderDone').style.display = 'none';
+            updateTotal();
+            document.getElementById('bookingModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.remove('show');
+        }
+
+        function backdropClose(e) {
+            if (e.target.id === 'bookingModal') {
+                closeModal();
+            }
+        }
+
+        // Hitung total (harga paket + tambahan)
+        function updateTotal() {
+            var total = basePrice;
+            document.querySelectorAll('.addon-check').forEach(function (c) {
+                if (c.checked) {
+                    total += parseInt(c.value, 10);
+                }
+            });
+            document.getElementById('totalPriceText').textContent = formatRupiah(total);
+        }
+
+        // Kirim pesanan
+        function submitOrder(e) {
+            e.preventDefault();
+            var f = e.target;
+            var bayar = f.querySelector('input[name="bayar"]:checked').value;
+
+            document.getElementById('doneDetail').innerHTML =
+                'Atas nama <strong>' + escapeHtml(f.nama.value) + '</strong><br>' +
+                escapeHtml(f.film.value) + '<br>' +
+                escapeHtml(f.bioskop.value) + ', kursi ' + escapeHtml(f.kursi.value) + '<br>' +
+                'Pembayaran via ' + bayar + ': <strong>' + document.getElementById('totalPriceText').textContent + '</strong>';
+
+            document.getElementById('orderFormWrap').style.display = 'none';
+            document.getElementById('orderDone').style.display = 'block';
+        }
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+    </script>
+</body>
+
+</html>

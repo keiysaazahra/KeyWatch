@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyWatch - Now Playing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <main class="main-content">
+
+        <div class="page-header">
+            <div class="header-text">
+                <span class="badge-top">Sedang tayang</span>
+                <h1>Now Playing</h1>
+                <p>Daftar film yang sedang tayang di bioskop KeyWatch. Klik poster untuk membaca sinopsisnya.</p>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterMovies('all', this)">Semua</button>
+                <button class="filter-btn" onclick="filterMovies('Action', this)">Action</button>
+                <button class="filter-btn" onclick="filterMovies('Sci-Fi', this)">Sci-Fi</button>
+                <button class="filter-btn" onclick="filterMovies('Animation', this)">Animation</button>
+                <button class="filter-btn" onclick="filterMovies('Horror', this)">Horror</button>
+                <button class="filter-btn" onclick="filterMovies('Romance', this)">Romance</button>
+            </div>
+        </div>
+
+        <section class="movie-grid" id="movieGrid">
+
+            <article class="movie-card" data-genre="Action">
+                <div class="poster-box">
+                    <span class="date-tag">20 Nov 2026</span>
+                    <span class="age-tag">R13+</span>
+                    <img src="the.jpg" alt="The Hunger Games: Sunrise on the Reaping">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="The Hunger Games: Sunrise on the Reaping" data-date="20 Nov 2026" data-meta="Action, Adventure &bull; 2j 38m"
+                            data-desc="Haymitch Abernathy (16 tahun) dari Distrik 12 terpilih menjadi tribut dalam edisi spesial dengan jumlah peserta dua kali lipat (48 tribut) dan arena yang lebih besar serta mematikan, sambil harus meninggalkan Lenore Dove Baird. Di tengah jebakan arena dan mutan mematikan, Haymitch membentuk aliansi tak terduga dengan sesama tribut, Maysilee Donner, serta bergabung dalam koalisi yang berupaya melawan kendali Capitol di bawah Presiden Snow dan memicu benih pemberontakan di Panem.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="The Hunger Games: Sunrise on the Reaping">The Hunger Games: Sunrise on the Reaping</h2>
+                    <p class="movie-info">Action, Adventure &bull; 2j 38m &bull; Sutradara: Francis Lawrence</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Sci-Fi">
+                <div class="poster-box">
+                    <span class="date-tag">4 Nov 2026</span>
+                    <span class="age-tag">R13+</span>
+                    <img src="godzila.jpg" alt="Godzilla Minus Zero">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="Godzilla Minus Zero" data-date="4 Nov 2026" data-meta="Sci-Fi, Adventure &bull; 2j 15m"
+                            data-desc="Berlatar tahun 1949, dua tahun setelah kehancuran Tokyo dan Perang Dunia II, Jepang berupaya bangkit dan menata kembali kehidupan. Koichi Shikishima, Noriko Oishi, dan anak angkat mereka, Akiko, berusaha menjalani hari-hari yang tenang sambil meninggalkan trauma masa lalu. Kedamaian tersebut runtuh ketika ancaman kaiju baru muncul dan Godzilla beregenerasi menjadi sosok yang lebih besar dan buas. Koichi dan rekan-rekan lamanya harus kembali menghadapi pertarungan raksasa.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="Godzilla Minus Zero">Godzilla Minus Zero</h2>
+                    <p class="movie-info">Sci-Fi, Adventure &bull; 2j 15m &bull; Sutradara: Takashi Yamazaki</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Romance">
+                <div class="poster-box">
+                    <span class="date-tag">20 Nov 2027</span>
+                    <span class="age-tag">R17+</span>
+                    <img src="k2 all.jpg" alt="KF 2026: All the Lovers in the Night">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="KF 2026: All the Lovers in the Night" data-date="20 Nov 2027" data-meta="Romance, Drama &bull; 2j 19m"
+                            data-desc="Mengisahkan Fuyuko, seorang korektor naskah lepas berusia 30-an di Tokyo yang hidup menyendiri, hingga pertemuannya dengan guru fisika SMA bernama Mitsutsuka perlahan membuka luka trauma dan emosi yang selama ini ia pendam.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="KF 2026: All the Lovers in the Night">KF 2026: All the Lovers in the Night</h2>
+                    <p class="movie-info">Romance, Drama &bull; 2j 19m &bull; Sutradara: Yukiko Sode</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Animation">
+                <div class="poster-box">
+                    <span class="date-tag">6 Nov 2027</span>
+                    <span class="age-tag">SU</span>
+                    <img src="the cat.jpg" alt="The Cat in the Hat">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="The Cat in the Hat" data-date="6 Nov 2027" data-meta="Animation, Adventure, Comedy &bull; 1j 47m"
+                            data-desc="Dua bersaudara (Sally dan saudara laki-lakinya yang menjadi narator) merasa bosan di rumah saat hari hujan dan ibu mereka pergi. Seekor kucing tinggi berjas dan bertopi garis merah-putih datang melakukan trik dan kekacauan bersama dua makhluk bernama Thing One dan Thing Two, meski diingatkan oleh seekor ikan peliharaan. Sebelum ibu pulang, si Kucing membereskan kekacauan menggunakan mesin pembersih.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="The Cat in the Hat">The Cat in the Hat</h2>
+                    <p class="movie-info">Animation, Adventure, Comedy &bull; 1j 47m &bull; Sutradara: Alessandro Carloni dan Erica Rivinoja</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Horror">
+                <div class="poster-box">
+                    <span class="date-tag">12 Nov 2026</span>
+                    <span class="age-tag">R17+</span>
+                    <img src="hajatan.jpg" alt="Hajatan Setan">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="Hajatan Setan" data-date="12 Nov 2026" data-meta="Horror, Mystery &bull; 1j 39m"
+                            data-desc="Cerita berfokus pada kepulangan Dara (Alika Jantinia) bersama ibunya ke kampung halaman mereka di Desa Arjosuro setelah bertahun-tahun merantau. Kepulangan ini bertepatan dengan digelarnya tradisi hajatan pasar setiap bulan Suro. Tradisi tersebut ternyata menyimpan misteri masa lalu dan memicu serangkaian teror aneh yang menjerumuskan warga desa ke dalam ketakutan.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="Hajatan Setan">Hajatan Setan</h2>
+                    <p class="movie-info">Horror, Mystery &bull; 1j 39m &bull; Sutradara: Bambang Drias dan Eko Kristianto</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Pop-up sinopsis -->
+    <div class="modal-backdrop" id="synopsisModal" onclick="closeModal(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModalBtn()" aria-label="Tutup">&times;</button>
+            <span class="modal-date" id="modalDate">Tanggal rilis</span>
+            <h2 id="modalTitle">Judul film</h2>
+            <p class="modal-meta" id="modalMeta">Genre &bull; Durasi</p>
+            <p class="modal-desc" id="modalDesc">Sinopsis lengkap film akan muncul di sini.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

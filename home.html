@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyWatch - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* style tag: lingkaran cahaya di hero */
+        .home-hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow {
+            position: absolute;
+            top: -90px;
+            right: -90px;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background-color: rgba(0, 153, 219, 0.22);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="home-hero">
+        <div class="glow"></div>
+        <div class="hero-content">
+            <span class="tagline">Selamat datang di KeyWatch</span>
+            <h1>Temukan Pengalaman Nonton Bioskop Terbaik</h1>
+            <p>Cek informasi film terbaru, sinopsis lengkap, serta jadwal tayang bioskop favoritmu dalam satu tempat
+                yang mudah dan cepat.</p>
+            <a href="#explore" class="btn-home">Mulai Jelajahi</a>
+        </div>
+    </main>
+
+    <!-- Banner kecil: seluruh gayanya ditulis inline -->
+    <div
+        style="position: relative; top: 0; left: 0; z-index: 2; width: 100%; max-width: 1000px; height: auto; min-height: 56px; margin: 0 auto; padding: 16px 24px; background-color: #e11d48; background-image: linear-gradient(90deg, #e11d48, #be123c); background-repeat: no-repeat; background-size: cover; background-position: center; color: #ffffff; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 16px; font-weight: 600; text-align: center; letter-spacing: 0.5px; line-height: 1.4; overflow: hidden;">
+        Promo akhir tahun: nonton berdua lebih hemat, cek halaman Offers.
+    </div>
+
+    <section id="explore" class="home-section">
+        <h2>Jelajahi KeyWatch</h2>
+        <p class="lead">Semua informasi film ada di empat halaman ini.</p>
+        <ul class="explore-list">
+            <li><a href="upcoming.html"><strong>Upcoming Movies</strong>Film yang akan tayang, lengkap dengan sinopsis dan tombol pengingat.</a></li>
+            <li><a href="nowplaying.html"><strong>Now Playing</strong>Film yang sedang tayang di bioskop saat ini.</a></li>
+            <li><a href="theaters.html"><strong>Theaters</strong>Lokasi bioskop KeyWatch dan jadwal tayang hari ini.</a></li>
+            <li><a href="offers.html"><strong>Offers</strong>Paket tiket dan makanan, plus form pemesanan.</a></li>
+        </ul>
+    </section>
+
+    <section class="home-section">
+        <h2>Cara Pesan Tiket</h2>
+        <p class="lead">Empat langkah dari pilih film sampai duduk di kursi.</p>
+        <ol class="step-list">
+            <li>Pilih film di halaman Now Playing.</li>
+            <li>Lihat jadwal dan lokasi bioskop di halaman Theaters.</li>
+            <li>Pilih paket yang cocok di halaman Offers.</li>
+            <li>Isi form pemesanan, lalu konfirmasi pembayaran.</li>
+        </ol>
+    </section>
+
+    <div class="bottom-space"></div>
+
+</body>
+
+</html>

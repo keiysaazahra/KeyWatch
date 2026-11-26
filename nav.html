@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigasi - KeyWatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="navframe">
+    <nav class="topnav">
+        <a href="home.html" target="mainFrame" class="brand">
+            <img src="logo2.png" alt="Logo KeyWatch">
+            <span>KeyWatch</span>
+        </a>
+
+        <ul class="menu">
+            <li><a href="home.html" target="mainFrame" class="active">Home</a></li>
+            <li><a href="upcoming.html" target="mainFrame">Upcoming Movies</a></li>
+            <li><a href="nowplaying.html" target="mainFrame">Now Playing</a></li>
+            <li><a href="theaters.html" target="mainFrame">Theaters</a></li>
+            <li><a href="offers.html" target="mainFrame">Offers</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // tandai menu yang sedang dibuka
+        var links = document.querySelectorAll('.menu a');
+
+        function setActive(href) {
+            links.forEach(function (a) {
+                a.classList.toggle('active', a.getAttribute('href') === href);
+            });
+        }
+
+        links.forEach(function (a) {
+            a.addEventListener('click', function () {
+                setActive(a.getAttribute('href'));
+            });
+        });
+
+        document.querySelector('.brand').addEventListener('click', function () {
+            setActive('home.html');
+        });
+    </script>
+</body>
+
+</html>

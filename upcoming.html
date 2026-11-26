@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyWatch - Upcoming Movies</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="script.js"></script>
+</head>
+
+<body>
+
+    <main class="main-content">
+
+        <div class="page-header">
+            <div class="header-text">
+                <span class="badge-top">Jadwal rilis mendatang</span>
+                <h1>Upcoming Movies</h1>
+                <p>Jelajahi daftar film terbaru yang akan segera tayang di layar bioskop terdekatmu.</p>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterMovies('all', this)">Semua</button>
+                <button class="filter-btn" onclick="filterMovies('Action', this)">Action</button>
+                <button class="filter-btn" onclick="filterMovies('Sci-Fi', this)">Sci-Fi</button>
+                <button class="filter-btn" onclick="filterMovies('Animation', this)">Animation</button>
+                <button class="filter-btn" onclick="filterMovies('Horror', this)">Horror</button>
+                <button class="filter-btn" onclick="filterMovies('Romance', this)">Romance</button>
+            </div>
+        </div>
+
+        <section class="movie-grid" id="movieGrid">
+
+            <article class="movie-card" data-genre="Romance">
+                <div class="poster-box">
+                    <span class="date-tag">3 Des 2026</span>
+                    <span class="age-tag">R17+</span>
+                    <img src="3726.jpg" alt="3726 MDPL">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="3726 MDPL" data-date="3 Des 2026" data-meta="Romance, Adventure &bull; 1j 56m"
+                            data-desc="Empat tahun memendam cinta, Rangga akhirnya memberanikan diri untuk mengutarakan perasaannya kepada Andini. Namun, jawaban itu tidak diberikan di bawah atap kampus, melainkan di Puncak Rinjani. Di saat langkah hampir sampai ke puncak, sosok dari masa lalu Andini kembali hadir dan menagih kesempatan kedua.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="3726 MDPL">3726 MDPL</h2>
+                    <p class="movie-info">Romance, Adventure &bull; 1j 56m &bull; Sutradara: Fajar Bustom</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Sci-Fi">
+                <div class="poster-box">
+                    <span class="date-tag">16 Des 2026</span>
+                    <span class="age-tag">R17+</span>
+                    <img src="dune.jpg" alt="Dune: Part Three">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="Dune: Part Three" data-date="16 Des 2026" data-meta="Sci-Fi, Adventure &bull; 2j 30m"
+                            data-desc="Dune: Part Three mengambil latar hampir dua dekade setelah Paul Atreides merebut kendali atas Imperium. Kini bertindak sebagai Kaisar yang tak kenal ampun, Paul harus menghadapi konsekuensi dari masa pemerintahannya saat sekutu lama kembali, ancaman baru yang mengerikan bermunculan, dan pengkhianatan mengintai di setiap bayangan. Dibayangi oleh penglihatan tentang runtuhnya Imperium serta kemunculan kembali cinta lamanya yang hilang, Paul terseret ke dalam konspirasi besar, dengan Chani berada di pusat misteri yang perlahan terungkap. Saat para musuh kian mendekat, Paul harus menghadapi harga sebenarnya dari sebuah kekuasaan dan takdir orang-orang yang paling ia cintai.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="Dune: Part Three">Dune: Part Three</h2>
+                    <p class="movie-info">Sci-Fi, Adventure &bull; 2j 30m &bull; Sutradara: Denis Villeneuve</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Action">
+                <div class="poster-box">
+                    <span class="date-tag">13 Jan 2027</span>
+                    <span class="age-tag">SU</span>
+                    <img src="beekeeper.jpg" alt="The Beekeeper 2">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="The Beekeeper 2" data-date="13 Jan 2027" data-meta="Action, Thriller &bull; 1j 56m"
+                            data-desc="Adam Clay kini hidup sebagai buronan. Saat organisasi yang disebut sebagai Beekeeper memberontak dan mengincar kendali pemerintahan, Adam harus bertarung dan menghadapi kelompok yang telah membesarkannya itu dan menjalani misi balas dendam.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="The Beekeeper 2">The Beekeeper 2</h2>
+                    <p class="movie-info">Action, Thriller &bull; 1j 56m &bull; Sutradara: Timo Tjahjanto</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Animation">
+                <div class="poster-box">
+                    <span class="date-tag">3 Feb 2027</span>
+                    <span class="age-tag">SU</span>
+                    <img src="ice age.jpg" alt="Ice Age: Boiling Point">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="Ice Age: Boiling Point" data-date="3 Feb 2027" data-meta="Animation, Adventure, Comedy &bull; 1j 43m"
+                            data-desc="Manny, Sid, Diego, Ellie, dan anggota kawanan lainnya melakukan petualangan penuh kekacauan ke wilayah bawah tanah Lost World yang belum pernah dijelajahi sebelumnya. Saat lingkungan mereka mulai memanas, mereka harus bertahan hidup melewati lanskap berbahaya yang penuh dinosaurus dan lahar)">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="Ice Age: Boiling Point">Ice Age: Boiling Point</h2>
+                    <p class="movie-info">Animation, Adventure, Comedy &bull; 1j 43m &bull; Sutradara: John C. Donkin</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+            <article class="movie-card" data-genre="Horror">
+                <div class="poster-box">
+                    <span class="date-tag">3 Des 2026</span>
+                    <span class="age-tag">R13</span>
+                    <img src="rp.jpg" alt="Ratu Petaka">
+                    <div class="poster-overlay">
+                        <button class="btn-synopsis" onclick="openModal(this)"
+                            data-title="Ratu Petaka" data-date="3 Des 2026" data-meta="Horror, Mystery &bull; 1j 31m"
+                            data-desc="Film ini mengangkat sisi kelam di balik gemerlap ajang kontes kecantikan Ratu Indonesia. Ceritanya berpusat pada lima finalis yang menyimpan rahasia gelap setelah salah satu kontestan bernama Mia meninggal dunia akibat perundungan (bullying). Demi menjaga nama baik dan masa depan, mereka menutupi tragedi tersebut, namun justru memicu teror mistis dan kejadian mengancam nyawa yang menghantui satu per satu.">Baca Sinopsis</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="movie-title" title="Ratu Petaka">Ratu Petaka</h2>
+                    <p class="movie-info">Horror, Mystery &bull; 1j 31m &bull; Sutradara: Gandhi Fernando</p>
+                    <button class="btn-notify" onclick="toggleNotify(this)">+ Ingatkan Saya</button>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Pop-up sinopsis -->
+    <div class="modal-backdrop" id="synopsisModal" onclick="closeModal(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModalBtn()" aria-label="Tutup">&times;</button>
+            <span class="modal-date" id="modalDate">Tanggal rilis</span>
+            <h2 id="modalTitle">Judul film</h2>
+            <p class="modal-meta" id="modalMeta">Genre &bull; Durasi</p>
+            <p class="modal-desc" id="modalDesc">Sinopsis lengkap film akan muncul di sini.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

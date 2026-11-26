@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyWatch - Theaters</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* style tag: penyesuaian khusus halaman ini */
+        .section-subtitle {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .theaters-wrap {
+            position: relative;
+            max-width: 1100px;
+        }
+
+        .schedule caption {
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 14px;
+            color: #aed6f1;
+            caption-side: bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="theaters" class="theaters-section">
+        <div class="theaters-wrap">
+            <h1 class="section-title">Theaters</h1>
+            <p class="section-subtitle">Pilih lokasi bioskop terdekat untuk pengalaman menonton terbaik.</p>
+
+            <div class="theaters-grid">
+                <div class="theater-card">
+                    <div class="theater-badge">IMAX &amp; Dolby</div>
+                    <h3>KeyWatch Grand Indonesia</h3>
+                    <p class="theater-address">Jl. M.H. Thamrin No.1, Jakarta Pusat</p>
+                    <div class="theater-features">
+                        <span>2D</span>
+                        <span>3D</span>
+                        <span>IMAX</span>
+                        <span>Premiere</span>
+                    </div>
+                    <a href="#jadwal-gi" class="btn-theater">Lihat Jadwal</a>
+                </div>
+
+                <div class="theater-card">
+                    <div class="theater-badge">4DX Available</div>
+                    <h3>KeyWatch Summarecon Mall</h3>
+                    <p class="theater-address">Jl. Boulevard Ahmad Yani, Bekasi</p>
+                    <div class="theater-features">
+                        <span>2D</span>
+                        <span>4DX</span>
+                        <span>Dolby Atmos</span>
+                    </div>
+                    <a href="#jadwal-smb" class="btn-theater">Lihat Jadwal</a>
+                </div>
+
+                <div class="theater-card">
+                    <div class="theater-badge">VIP Lounge</div>
+                    <h3>KeyWatch Pondok Indah</h3>
+                    <p class="theater-address">Jl. Metro Pondok Indah, Jakarta Selatan</p>
+                    <div class="theater-features">
+                        <span>2D</span>
+                        <span>Premiere</span>
+                        <span>Velvet</span>
+                    </div>
+                    <a href="#jadwal-pim" class="btn-theater">Lihat Jadwal</a>
+                </div>
+            </div>
+
+            <div class="schedule-block">
+                <h2>Jadwal Tayang Hari Ini</h2>
+                <p>Klik tombol Lihat Jadwal di atas untuk menyorot bioskop yang kamu pilih.</p>
+
+                <div class="schedule-wrap">
+                    <table class="schedule">
+                        <thead>
+                            <tr>
+                                <th>Bioskop</th>
+                                <th>Film</th>
+                                <th>Studio</th>
+                                <th>Jam Tayang</th>
+                                <th>Harga Tiket</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="jadwal-gi">
+                            <tr>
+                                <td class="venue" rowspan="3">Grand Indonesia</td>
+                                <td>The Hunger Games: Sunrise on the Reaping</td>
+                                <td>IMAX</td>
+                                <td>13.00, 16.30, 20.00</td>
+                                <td>Rp 90.000</td>
+                            </tr>
+                            <tr>
+                                <td>Godzilla Minus Zero</td>
+                                <td>Studio 2 (Dolby)</td>
+                                <td>14.15, 18.45</td>
+                                <td>Rp 75.000</td>
+                            </tr>
+                            <tr>
+                                <td>KF 2026: All the Lovers in the Night</td>
+                                <td>Premiere</td>
+                                <td>15.00, 19.30</td>
+                                <td>Rp 110.000</td>
+                            </tr>
+                        </tbody>
+
+                        <tbody id="jadwal-smb">
+                            <tr>
+                                <td class="venue" rowspan="3">Summarecon Mall</td>
+                                <td>Godzilla Minus Zero</td>
+                                <td>4DX</td>
+                                <td>12.30, 17.00, 21.15</td>
+                                <td>Rp 95.000</td>
+                            </tr>
+                            <tr>
+                                <td>The Hunger Games: Sunrise on the Reaping</td>
+                                <td>Studio 3</td>
+                                <td>13.45, 18.15</td>
+                                <td>Rp 55.000</td>
+                            </tr>
+                            <tr>
+                                <td>The Cat in the Hat</td>
+                                <td>Studio 1</td>
+                                <td>11.00, 14.00</td>
+                                <td>Rp 50.000</td>
+                            </tr>
+                        </tbody>
+
+                        <tbody id="jadwal-pim">
+                            <tr>
+                                <td class="venue" rowspan="3">Pondok Indah</td>
+                                <td>KF 2026: All the Lovers in the Night</td>
+                                <td>Velvet</td>
+                                <td>16.00, 20.30</td>
+                                <td>Rp 120.000</td>
+                            </tr>
+                            <tr>
+                                <td>Hajatan Setan</td>
+                                <td>Studio 2</td>
+                                <td>19.00, 21.30</td>
+                                <td>Rp 60.000</td>
+                            </tr>
+                            <tr>
+                                <td>The Hunger Games: Sunrise on the Reaping</td>
+                                <td>Premiere</td>
+                                <td>15.15, 19.45</td>
+                                <td>Rp 100.000</td>
+                            </tr>
+                        </tbody>
+
+                        <caption>Jadwal dan harga dapat berubah sewaktu-waktu.</caption>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
